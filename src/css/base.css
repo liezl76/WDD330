@@ -1,210 +1,405 @@
-* {
-    margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
+/* Header Grid     */
 header {
-    position: relative;
+    display: grid;
+    grid-template-columns: 150px auto;
+  }
+  nav {
     display: flex;
-    gap: 2rem;
+    justify-content: space-around;
+  }
+  #logo_link {
+    padding-top: 5px;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  /*Hero Grid */
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: -100px;
+  }
+  #hero-box {
+    grid-column: 1 / 4;
+    grid-row: 1 / 3;
+  }
+  #hero-msg h4 {
+    color: white;
+  }
+  #hero-msg {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 100px;
+  }
+  
+  /* Main Grid */
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  } 
+  .card-img {
+    width: 100%;
+    border: 10px solid #d9c2a3;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+  }
+  .card-img:hover {
+    opacity: .6;
+    transform: scale(1.1);
+  }
+  .rivers-card {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+  .camping-card {
+    grid-column: 5 / 7;
+    grid-row: 2 / 3;
+  }
+  .rapids-card {
+    grid-column: 8 / 10;
+    grid-row: 2 / 3;
+  }
+  
+  .mountains {
+    width: 100%;
+    grid-column: 2 / 7;
+    grid-row: 5 / 8;
+    box-shadow: 5px 5px 10px #6f7364; 
+  }
+  .msg {
+    background-color: #6f7364;
+    padding: 35px;
+    grid-column: 6/10;
+    grid-row: 6/7;
+    box-shadow: 5px 5px 10px #6f7364;
+  }
+  #background {
+    grid-column: 1 / 11;
+    grid-row: 4 / 9;
+  }
+  
+  /*Footer */
+  footer {
+    background-color: #6f7364;
+    padding: 25px 50px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    background-color: #1D1D1D;
-    padding: 20px;
-    margin: 1rem;
-}
-
-header img {
-    width: 100px;
-	height: 100px;
-}
-
-#mode {
+  }
+  
+  /* for fonts and etc  */
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Montserrat:ital,wght@0,200;1,200&family=Open+Sans:wght@300&display=swap');
+  
+  .home-title {
+    color: black;
+    font-family: 'League of Spartan', 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-top: 10px;
+  }
+  
+  #logo_link {
+    padding-top: 5px;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+  
+  h4 {
+    color: black;
+  }
+  
+  body {
+      background-color: #e76915; 
+      font-family: 'Trebuchet MS', 'Montserrat', sans-serif;
+      font-size: 22px;
+      margin: 0;
+      padding: 0;
+  }
+  
+  #content {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  header {
+      background-color:#f5b88f;
+      opacity: 0.7;
+  }
+  
+  nav a {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    padding: 35px;
+  }
+  
+  nav a:hover {
+      background-color: #e76915;
+      color: black;
+  }
+  
+  .book, .join {
+    background-color: #e76915;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+  }
+  
+  .card-img {
+    border: 10px solid #d9c2a3;
+  }
+  
+  .icon {
+    padding-top: 10px;
+  }
+  
+  .book:hover, .join:hover {
+    color: black;
+  }
+  
+  #hero-msg h1, #hero-msg h4 {
+    text-align: center;
+  }
+  
+  .button-box {
+    text-align: center;
+  }
+  
+  .logo {
+    width: 80px;
+  }
+  
+  .icon {
+    width: 80px;
+  }
+  
+  #hero-img {
+    width: 100%;
+  }
+  
+  main section {
+    text-align: center;
+  }
+  
+  main section img {
+    box-sizing: border-box;
+  }
+  
+  .rivers-card, .camping-card, .rapids-card {
+    margin: 200px 0;
+  }
+  
+  .mountains {
+    width: 725px;
+  }
+  
+  #background {
+    height: 725px;
+    background-color: #f5b88f;
+  }
+  
+  .msg {
+    background-color: #e76915;
+    line-height: 1.5em;
+    padding: 35px;
+  }
+  
+  .msg h2{
+    background-color: #f8d8c4;
+    color: black;
+  }
+  
+  .msg p {
+    color: black;
+    font-size: .8em;
+    padding-bottom: 15px;
+  }
+  
+  footer {
+    background-color: #f5b88f;
+    color: black;
+    padding: 25px 50px;
+    margin-top: 200px;
+  }
+  
+  footer p {
+    font-size: 1.2em;
+  }
+  
+  footer p a:hover {
+    text-decoration: underline;
+  }
+  
+  footer a {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    background-color: #f0bfbf;
+    color: black;
+  }
+  
+  .social img {
+    width: 80px;
+  }
+  
+  footer .social img {
+    padding-top: 15px;
+  }
+  
+  /* rafting sub page css  */
+  .rivers1-img {
+    float:left;
+    margin: 0px 15px 15px 0px;
+    width: 15%;
+    height: 10%;
+  }
+  
+  .rivers2-img {
+    float:left;
+    margin: 0px 15px 15px 0px;
+    clear: both;
+    width: 15%;
+    height: 10%;
+  }
+  
+  .rivers1 {
+    float:left;
+    margin: 0px 0px 15px 0px;
+  }
+  
+  .rivers2 {
+    float:left;
+    margin: 0px 0px 15px 0px;
+    clear: both;
+  }
+  
+  /* Feedback css */
+  #feedback {
+    background-color: antiquewhite;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 28px;
-    cursor: pointer;
-}
-
-h1 {
-    display: inline-block;
-    color: #F1F5F5;
-    position: relative;
-    top: -20px;
-}
-
-nav {
-	background-color: #3e5c88;
-    margin: 1rem;
-}
-
-#myButton::before {
-    content: "=";
-}
-
-#myButton {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    width: 100%;
-    text-align: right;
-    padding: .25rem 2vw;
-}
-
-ul.menuLinks li a {
-    display: block;
-    padding: .75rem 2vw;
-    color: #fff;
-    text-decoration: none;
-}
-
-li.current-menu-item a {
-    background-color: rgba(211, 200, 200, 0.2);
-}
-
-ul.menuLinks {
-    display: none;
-    list-style-type: none;
-}
-
-nav ul {
-	list-style-type: none;
-}
-
-nav a {
-	display: block;
-	color: #fff;
-	text-align: center;
-	padding: .5rem;
-	text-decoration: none;
-}
-
-nav a:hover {
-	background-color: rgb(255, 255, 255, 0.2);
-}
-
-.hero {
-    width: 100%;
-    position: relative;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero span {
-    position:absolute;
-    margin-top: 2rem;
     top: 0;
-    left: 100px;
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.5rem;
-    text-align: center;
-}
-
-h2 {
-    margin-top: 1rem;
-    margin-left: 1rem;
-}
-
-.container {
-    margin: 1rem 2vw;
-}
-
-.card {
-    border: 1px solid #030303;
-    background-color: beige;
-    padding: 15px;
-    border-radius: 2.5px;
-    overflow: hidden;
-    margin: 1rem 0;
-}
-
-ul {
-    list-style-type: none;
+    left: 0;
+    right: 0;
+    padding: .5em;
+    /* make this element invisible until we are ready for it */
+    display: none;      
+  }
+  .moveDown {
+    margin-top: 3em;
+  }
+  
+  form {
+    /* Center the form on the page */
+    margin: 25px auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
     padding: 0;
-}
-
-ul li {
-    margin: 0.5rem 0;
-}
-
-ul li a {
-    color: black; 
-    text-decoration: none;
-}
-
-p {
-    margin: 1rem;
-}
-
-figure {
-    position: relative;
-    text-align: center;
-}
-
-footer {
-    background-color: #F59115;
-    color: whitesmoke;
-    padding: 10px;
-    text-align: center;
-    margin: 1rem;
-}
-
-footer img {
-    width: 20px;
-	height: 15px;
-}
-
-.dark-mode header {
-    background-color: #1a1a1a;
-}
-
-.dark-mode body {
-    color: black;
-}
-
-.dark-mode nav {
-    background-color: #333;
-}
-
-.dark-mode ul.menuLinks li a {
-    color: #fff;
-}
-
-.dark-mode li a {
-    color: white; 
-    text-decoration: none;
-}
-
-.dark-mode .card {
-    border-color: black;
-    background-color: #1a1a1a;
-}
-
-.dark-mode h3,
-.dark-mode h1,
-.dark-mode footer {
-    background-color: rgb(245, 237, 226);
-    color: black;
-}
-
-/*CSS for the open class */
-#myButton.open::before {
-    content: "x";
-}
-
-ul.open.menuLinks {
-    display: block;
-}
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input,
+  textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
+  
+    /* Uniform text field size */
+    width: 300px;
+    box-sizing: border-box;
+  
+    /* Match form field borders */
+    border: 1px solid #999;
+  }
+  
+  input:focus,
+  textarea:focus {
+    /* Additional highlight for focused elements */
+    border-color: #000;
+  }
+  
+  textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* Provide space to type some text */
+    height: 5em;
+  }
+  
+  .button {
+    /* Align buttons with the text fields */
+    padding-left: 90px; /* same size as the label elements */
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: 0.5em;
+  }
+  
+  @media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    nav, footer {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    .home-title {
+        font-size: 25px;
+        color: #6f7364;
+    }
+    .rivers-card, .camping-card, .rapids-card { 
+        margin: 50px auto;
+        width: 60%;
+    }
+    #background {
+        display: none;
+    }
+    .mountains, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    footer {
+        margin-top: 25px;
+    }
+  }
