@@ -92,7 +92,7 @@ header {
   @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Montserrat:ital,wght@0,200;1,200&family=Open+Sans:wght@300&display=swap');
   
   .home-title {
-    color: black;
+    color: #F1F5F5;
     font-family: 'League of Spartan', 'Montserrat', sans-serif;
     font-size: 2em;
     margin-top: 10px;
@@ -107,11 +107,11 @@ header {
   }
   
   h4 {
-    color: black;
+    color: #F1F5F5;
   }
   
   body {
-      background-color: #e76915; 
+      background-color: #121313; 
       font-family: 'Trebuchet MS', 'Montserrat', sans-serif;
       font-size: 22px;
       margin: 0;
