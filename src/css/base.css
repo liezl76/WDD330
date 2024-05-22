@@ -162,7 +162,7 @@ header {
     color: black;
   }
   
-  #hero-msg h1, #hero-msg h4 {
+  #hero-msg h1 {
     text-align: center;
   }
   
@@ -179,6 +179,7 @@ header {
   }
   
   #hero-img {
+    margin-top: 100px;
     width: 100%;
   }
   
