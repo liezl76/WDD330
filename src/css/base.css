@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #1D1D1D;
+    padding: 20px;
+    margin: 1rem;
+}
+
+header img {
+    width: 100px;
+	height: 100px;
+}
+
+#mode {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    cursor: pointer;
+}
+
+h1 {
+    display: inline-block;
+    color: #F1F5F5;
+    position: relative;
+    top: -20px;
+}
+
+nav {
+	background-color: #3e5c88;
+    margin: 1rem;
+}
+
+#myButton::before {
+    content: "=";
+}
+
+#myButton {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+    padding: .25rem 2vw;
+}
+
+ul.menuLinks li a {
+    display: block;
+    padding: .75rem 2vw;
+    color: #fff;
+    text-decoration: none;
+}
+
+li.current-menu-item a {
+    background-color: rgba(211, 200, 200, 0.2);
+}
+
+ul.menuLinks {
+    display: none;
+    list-style-type: none;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav a {
+	display: block;
+	color: #fff;
+	text-align: center;
+	padding: .5rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: rgb(255, 255, 255, 0.2);
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero span {
+    position:absolute;
+    margin-top: 2rem;
+    top: 0;
+    left: 100px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.container {
+    margin: 1rem 2vw;
+}
+
+.card {
+    border: 1px solid #030303;
+    background-color: beige;
+    padding: 15px;
+    border-radius: 2.5px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+ul li a {
+    color: black; 
+    text-decoration: none;
+}
+
+p {
+    margin: 1rem;
+}
+
+figure {
+    position: relative;
+    text-align: center;
+}
+
+footer {
+    background-color: #F59115;
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+    margin: 1rem;
+}
+
+footer img {
+    width: 20px;
+	height: 15px;
+}
+
+.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+.dark-mode body {
+    color: black;
+}
+
+.dark-mode nav {
+    background-color: #333;
+}
+
+.dark-mode ul.menuLinks li a {
+    color: #fff;
+}
+
+.dark-mode li a {
+    color: white; 
+    text-decoration: none;
+}
+
+.dark-mode .card {
+    border-color: black;
+    background-color: #1a1a1a;
+}
+
+.dark-mode h3,
+.dark-mode h1,
+.dark-mode footer {
+    background-color: rgb(245, 237, 226);
+    color: black;
+}
+
+/*CSS for the open class */
+#myButton.open::before {
+    content: "x";
+}
+
+ul.open.menuLinks {
+    display: block;
+}
