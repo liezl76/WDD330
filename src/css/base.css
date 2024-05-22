@@ -32,7 +32,7 @@ header {
   /* Main Grid */
   .home-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   } 
   .card-img {
     width: 100%;
@@ -48,33 +48,7 @@ header {
     grid-column: 2 / 4;
     grid-row: 2 / 3;
   }
-  .camping-card {
-    grid-column: 5 / 7;
-    grid-row: 2 / 3;
-  }
-  .rapids-card {
-    grid-column: 8 / 10;
-    grid-row: 2 / 3;
-  }
-  
-  .mountains {
-    width: 100%;
-    grid-column: 2 / 7;
-    grid-row: 5 / 8;
-    box-shadow: 5px 5px 10px #6f7364; 
-  }
-  .msg {
-    background-color: #6f7364;
-    padding: 35px;
-    grid-column: 6/10;
-    grid-row: 6/7;
-    box-shadow: 5px 5px 10px #6f7364;
-  }
-  #background {
-    grid-column: 1 / 11;
-    grid-row: 4 / 9;
-  }
-  
+
   /*Footer */
   footer {
     background-color: #6f7364;
