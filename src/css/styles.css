@@ -1,0 +1,42 @@
+/* responsive */
+#bars {
+    display: none;
+}
+
+#bars i {
+    cursor: pointer;
+}
+@media(max-width:720px) {
+    #bars {
+        display:block
+    }
+
+    nav span ul {
+        display: none;
+    }
+
+    .show {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        transition: all .3s;
+    }
+
+    nav ul {
+        margin: 0rem 1rem;
+        box-shadow: 15px 20px 30px rgb(231, 230, 230);
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 2rem;
+    }
+
+    nav ul a {
+        text-align: left;
+        color: white;
+    }
+}
