@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Volleyball Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .hero-box {
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-box h1 {
+            margin: 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: #ff6f61;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+        }
+
+        nav a:hover {
+            background: #e65b55;
+        }
+
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        #join-us img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #news {
+            margin-top: 20px;
+        }
+
+        .news-item {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .news-item p {
+            margin: 0;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #e65b55;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .social-media {
+            margin: 10px 0;
+        }
+
+        .social-media a {
+            margin: 0 5px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .social-media img {
+            width: 20px;
+            height: auto;
+        }
+
+        .social-media a:hover img {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                display: flex;
+            }
+
+            .hero-box {
+                text-align: center;
+            }
+
+            form input, form textarea, form button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 5px 0;
+            }
+
+            .hero-box {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            footer {
+                padding: 5px 0;
+            }
+
+            .social-media img {
+                width: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="hero-box">
+        <h1>Women's Volleyball</h1>
+    </div>
+    <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<nav id="nav-menu">
+    <a href="#">Home</a>
+    <a href="#">Players Profile</a>
+    <a href="#">Team Profile</a>
+</nav>
+
+<main>
+    <section id="about-volleyball">
+        <h2>All About Volleyball</h2>
+        <p>Volleyball is a popular sport played by men and women worldwide. It requires teamwork, agility, and strategy. Whether you're a player or a fan, there's something special about the energy and excitement of volleyball matches.</p>
+    </section>
+
+    <section id="join-us">
+        <h2>Join Us to Watch Women's Volleyball in Action!</h2>
+        <img src="volleyball-action.jpg" alt="Women's Volleyball in Action">
+        <p>Come join us to experience the thrill of women's volleyball matches. Whether you're a player or a spectator, there's a place for you in our community. Stay tuned for upcoming events and matches!</p>
+    </section>
+
+    <section id="news">
+        <h2>Latest News</h2>
+        <div id="news-container">
+            <!-- News items will be dynamically inserted here -->
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Women's Volleyball. All Rights Reserved.</p>
+    <div class="social-media">
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch('https://api.example.com/volleyball-news')
+            .then(response => response.json())
+            .then(data => {
+                const newsContainer = document.getElementById('news-container');
+                data.articles.forEach(article => {
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
+                    newsItem.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.description}</p>
+                        <a href="${article.url}" target="_blank">Read more</a>
+                    `;
+                    newsContainer.appendChild(newsItem);
+                });
+            })
+            .catch(error => console.error('Error fetching the news:', error));
+    });
+</script>
+
+</body>
+</html>

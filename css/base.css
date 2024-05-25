@@ -30,23 +30,30 @@ nav {
 }
   
 /* Main Grid */
-.home-grid {
+/* .home-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-} 
-.card-img {
-  width: 100%;
-  border: 10px solid #d9c2a3;
-  transition: transform .5s;
-  box-shadow: 5px 5px 10px #6f7364;
+}  */
+
+#news {
+  margin-top: 20px;
 }
-.card-img:hover {
-  opacity: .6;
-  transform: scale(1.1);
+
+.news-item {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(241, 236, 236, 0.1);
 }
-.rivers-card {
-  grid-column: 2 / 4;
-  grid-row: 2 / 3;
+
+.news-item h3 {
+  /* margin: 0 0 10px 0; */
+  margin-left: 0;
+}
+
+.news-item p {
+  margin: 0;
 }
 
 /*Footer */
@@ -72,17 +79,10 @@ footer {
   #logo_link {
     padding-top: 5px;
   }
-  
-  h2 {
-    margin: 0;
-  }
-  
-  h4 {
-    color: #F1F5F5;
-  }
-  
+    
+
   body {
-      background-color: #121313; 
+      background-color: #daf3f3; 
       font-family: 'Trebuchet MS', 'Montserrat', sans-serif;
       font-size: 22px;
       margin: 0;
@@ -111,7 +111,7 @@ footer {
       color: black;
   }
   
-  .book, .join {
+  .join {
     background-color: #e76915;
     color: black;
     text-decoration: none;
@@ -121,15 +121,11 @@ footer {
     border-radius: 5px;
   }
   
-  .card-img {
-    border: 10px solid #d9c2a3;
-  }
-  
   .icon {
     padding-top: 10px;
   }
   
-  .book:hover, .join:hover {
+  .join:hover {
     color: black;
   }
   
@@ -153,11 +149,7 @@ footer {
     margin-top: 100px;
     width: 100%;
   }
-  
-  main section {
-    text-align: center;
-  }
-  
+   
   main section img {
     box-sizing: border-box;
   }
@@ -172,12 +164,7 @@ footer {
     line-height: 1.5em;
     padding: 35px;
   }
-  
-  .msg h2{
-    background-color: #f8d8c4;
-    color: black;
-  }
-  
+   
   .msg p {
     color: black;
     font-size: .8em;
@@ -188,11 +175,11 @@ footer {
     background-color: #f5b88f;
     color: black;
     padding: 25px 50px;
-    margin-top: 200px;
+    margin-top: 100px;
   }
   
   footer p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   
   footer p a:hover {
@@ -211,121 +198,14 @@ footer {
   }
   
   .social img {
-    width: 80px;
+    width: 50px;
   }
   
   footer .social img {
-    padding-top: 15px;
+    padding-top: 10px;
   }
   
-  /* rafting sub page css  */
-  .rivers1-img {
-    float:left;
-    margin: 0px 15px 15px 0px;
-    width: 15%;
-    height: 10%;
-  }
-  
-  .rivers2-img {
-    float:left;
-    margin: 0px 15px 15px 0px;
-    clear: both;
-    width: 15%;
-    height: 10%;
-  }
-  
-  .rivers1 {
-    float:left;
-    margin: 0px 0px 15px 0px;
-  }
-  
-  .rivers2 {
-    float:left;
-    margin: 0px 0px 15px 0px;
-    clear: both;
-  }
-  
-  /* Feedback css */
-  #feedback {
-    background-color: antiquewhite;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: .5em;
-    /* make this element invisible until we are ready for it */
-    display: none;      
-  }
-  .moveDown {
-    margin-top: 3em;
-  }
-  
-  form {
-    /* Center the form on the page */
-    margin: 25px auto;
-    width: 400px;
-    /* Form outline */
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 1em;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  form li + li {
-    margin-top: 1em;
-  }
-  
-  label {
-    /* Uniform size & alignment */
-    display: inline-block;
-    width: 90px;
-    text-align: right;
-  }
-  
-  input,
-  textarea {
-    /* To make sure that all text fields have the same font settings
-       By default, textareas have a monospace font */
-    font: 1em sans-serif;
-  
-    /* Uniform text field size */
-    width: 300px;
-    box-sizing: border-box;
-  
-    /* Match form field borders */
-    border: 1px solid #999;
-  }
-  
-  input:focus,
-  textarea:focus {
-    /* Additional highlight for focused elements */
-    border-color: #000;
-  }
-  
-  textarea {
-    /* Align multiline text fields with their labels */
-    vertical-align: top;
-  
-    /* Provide space to type some text */
-    height: 5em;
-  }
-  
-  .button {
-    /* Align buttons with the text fields */
-    padding-left: 90px; /* same size as the label elements */
-  }
-  
-  button {
-    /* This extra margin represent roughly the same space as the space
-       between the labels and their text fields */
-    margin-left: 0.5em;
-  }
-  
+   
   @media screen and (max-width: 900px) {
     #hero, .home-grid {
         display: block;
@@ -351,19 +231,12 @@ footer {
         font-size: 25px;
         color: #6f7364;
     }
-    .rivers-card, .camping-card, .rapids-card { 
-        margin: 50px auto;
-        width: 60%;
-    }
+ 
     #background {
         display: none;
     }
-    .mountains, .msg {
-        width: 80%;
-        display: block;
-        margin: 0 auto;
-    }
+
     footer {
-        margin-top: 25px;
+        margin-top: 20px;
     }
   }
