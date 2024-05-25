@@ -5,50 +5,98 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Women's Volleyball Website | WDD330 | Home</title>
-  <link rel="stylesheet" href="..\css\base.css">
+  <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
   <div id="content">
     <header>
       <a id="logo_link" href="index.html">
-       <img class="logo" src="..\images\vballimg1.jpg" alt="Volleyball img">
+        <img class="logo" src="src/images/vballimg1.jpg" alt="Volleyball img">
       </a>
-      <nav>
-          <a href="index.html">Home</a>
-          <a href="src/players/index.html">Player Profiles</a>
-          <a href="src/team/index.html">Volleyball Team Hub</a>
-          <a href="">Contact Us</a>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="players/index.html">Player Profiles</a>
+        <a href="team/index.html">Volleyball Team Hub</a>
+        <a href="#">Contact Us</a>
       </nav>
     </header>
-      <div id="hero">
+    <div id="hero">
         <div id="hero-box">
             <img id="hero-img" src="src/images/vballimg1.jpg" alt="women's volleyball">
         </div>
         <section id="hero-msg">
-            <h1 class="home-title">Profiles of Female Volleyball Players</h1>
+            <h1 class="home-title">Discover the exciting world of women's volleyball, where passion, skill, and teamwork collide on the court.</h1>
+            <div class="button-box">
+              <a class="book" href="join.html">Join Now</a>
             </div>
         </section>
-      </div>
+    </div>
     <main class="home-grid">
-      <section class="volleyball-card">
-        <img class="card-img" src="images/river.jpg" alt="river in forest">
-        <img class="icon" src="images/river_icon.png" alt="river icon">
+      <section id="news">
+        <h2>Latest News</h2>
+        <div id="news-container">
+            <!-- News items will be dynamically inserted here -->
+        </div>
       </section>
     </main>
     <footer>
       <p>Women's Volleyball Website &copy; 2024 - Liezl Lizardo WDD330</p>
       <div class="social">
           <a href="https://facebook.com" target="_blank">
-            <img src="..\images\fb.png" alt="fb icon">
+            <img src="src/images/fb.png" alt="fb icon">
           </a>
           <a href="https://twitter.com" target="_blank">
-            <img src="..\images\twitter.png" alt="twitter icon">
+            <img src="src/images/twitter.png" alt="twitter icon">
           </a>
           <a href="https://instagram.com" target="_blank">
-            <img src="..\images\instagram.png" alt="instagram icon">
+            <img src="src/images/instagram.png" alt="instagram icon">
           </a>
       </div>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const url = 'https://real-time-sports-news-api.p.rapidapi.com/live-articles';
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+          'X-RapidAPI-Host': 'real-time-sports-news-api.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        const newsContainer = document.getElementById('news-container');
+        result.articles.forEach(article => {
+          const newsItem = document.createElement('div');
+          newsItem.className = 'news-item';
+          newsItem.innerHTML = `
+            <h3>${article.title}</h3>
+            <p>${article.description}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+          `;
+          newsContainer.appendChild(newsItem);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
 </body>
 </html>
