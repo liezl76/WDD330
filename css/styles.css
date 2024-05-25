@@ -1,42 +1,214 @@
-/* responsive */
-#bars {
+/* General styles */
+body {
+  background-color: #daf3f3;
+  font-family: 'Trebuchet MS', 'Montserrat', sans-serif;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5b88f;
+}
+
+#logo_link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #e76915;
+  color: white;
+}
+
+/* Hero section styles */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -100px;
+}
+
+#hero-box {
+  width: 100%;
+  text-align: center;
+}
+
+#hero-msg {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.home-title {
+  color: #F1F5F5;
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  font-size: 2em;
+}
+
+.button-box {
+  margin-top: 20px;
+}
+
+.book {
+  background-color: #e76915;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.book:hover {
+  background-color: #d45b10;
+}
+
+/* News section styles */
+#news {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.news-item {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+  margin: 0 0 10px 0;
+}
+
+.news-item p {
+  margin: 0;
+}
+
+/* Footer styles */
+footer {
+  background-color: #6f7364;
+  padding: 25px;
+  text-align: center;
+  color: black;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.social a {
+  margin: 0 10px;
+}
+
+.social img {
+  width: 30px;
+  transition: transform 0.2s;
+}
+
+.social a:hover img {
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
     display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    background-color: #f5b88f;
+    color: black;
+  }
+
+  nav a:hover {
+    background-color: #e76915;
+  }
+
+  #hero {
+    margin-top: 0;
+  }
+
+  .home-title {
+    font-size: 1.5em;
+  }
+
+  .book {
+    font-size: 1em;
+  }
 }
 
-#bars i {
-    cursor: pointer;
-}
-@media(max-width:720px) {
-    #bars {
-        display:block
-    }
+@media (max-width: 480px) {
+  .nav-toggle {
+    margin-right: 10px;
+  }
 
-    nav span ul {
-        display: none;
-    }
+  .logo {
+    width: 60px;
+  }
 
-    .show {
-        display: block;
-        position: absolute;
-        top: 2rem;
-        right: 0;
-        width: 50%;
-        height: 100vh;
-        transition: all .3s;
-    }
+  .home-title {
+    font-size: 1.2em;
+  }
 
-    nav ul {
-        margin: 0rem 1rem;
-        box-shadow: 15px 20px 30px rgb(231, 230, 230);
-        text-align: center;
-    }
+  .book {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
 
-    nav ul li {
-        margin: 2rem;
-    }
-
-    nav ul a {
-        text-align: left;
-        color: white;
-    }
+  .social img {
+    width: 25px;
+  }
 }
