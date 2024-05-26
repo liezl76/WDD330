@@ -19,7 +19,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #f5b88f;
+  background-color: #F05323;
 }
 
 #logo_link {
@@ -74,6 +74,13 @@ nav a:hover {
   text-align: center;
 }
 
+#hero-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0 20px;
+}
+
 #hero-msg {
   margin-top: 20px;
   text-align: center;
@@ -90,7 +97,7 @@ nav a:hover {
 }
 
 .book {
-  background-color: #e76915;
+  background-color: #F05323;
   color: white;
   text-decoration: none;
   padding: 15px 30px;
@@ -121,13 +128,17 @@ nav a:hover {
   margin: 0 0 10px 0;
 }
 
+.news-item h3 {
+  margin: 0 0 10px 0;
+}
+
 .news-item p {
   margin: 0;
 }
 
 /* Footer styles */
 footer {
-  background-color: #6f7364;
+  background-color: #00937A;
   padding: 25px;
   text-align: center;
   color: black;
@@ -138,7 +149,9 @@ footer p {
 }
 
 .social {
-  margin-top: 10px;
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
 .social a {
