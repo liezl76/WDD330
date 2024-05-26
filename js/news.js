@@ -26,3 +26,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(error);
   }
 });
+
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+navToggle.addEventListener('click', () => {
+  navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+});
