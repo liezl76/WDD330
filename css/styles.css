@@ -167,6 +167,10 @@ footer p {
   transform: scale(1.2);
 }
 
+.footer-img {
+  width: 30px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .nav-toggle {
