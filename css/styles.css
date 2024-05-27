@@ -137,6 +137,27 @@ nav a:hover {
   margin: 0;
 }
 
+.player-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  text-align: center;
+}
+
+.player-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.player-card h3 {
+  margin: 10px 0 5px;
+}
+
+.player-card p {
+  margin: 5px 0;
+}
+
+
 /* Footer styles */
 footer {
   background-color: #00937A;
