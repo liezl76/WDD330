@@ -50,7 +50,7 @@
     },
     {
       "name": "Thaisa Menezes",
-      "position": "MIddle Blocker",
+      "position": "Middle Blocker",
       "country": "Brazil",
       "image": "images/players/ThaisaMenezes.png"
     },
@@ -59,6 +59,66 @@
       "position": "Opposite",
       "country": "USA",
       "image": "images/players/AndreaDrews.png"
+    },
+    {
+      "name": "Melissa Vargas",
+      "position": "Opposite",
+      "country": "Turkey",
+      "image": "images/players/MelissaVargas.png"
+    },
+    {
+      "name": "Yingying Li",
+      "position": "Outside Hitter",
+      "country": "China",
+      "image": "images/players/YingyingLi.png"
+    },
+    {
+      "name": "Monique Pavao",
+      "position": "Opposite",
+      "country": "Brazil",
+      "image": "images/players/MoniquePavao.png"
+    },
+    {
+      "name": "Natalia Araujo",
+      "position": "Libero",
+      "country": "Brazil",
+      "image": "images/players/NataliaAraujo.png"
+    },
+    {
+      "name": "Leah Edmond",
+      "position": "Outside Hitter",
+      "country": "USA",
+      "image": "images/players/LeahEdmond.png"
+    },
+    {
+      "name": "Danielle Lins",
+      "position": "Setter",
+      "country": "Brazil",
+      "image": "images/players/DanielleLins.png"
+    },
+    {
+      "name": "Mayany Souza",
+      "position": "Middle Blocker",
+      "country": "Brazil",
+      "image": "images/players/MayanySouza.png"
+    },
+    {
+      "name": "Vita Akimova",
+      "position": "Opposite",
+      "country": "Russia",
+      "image": "images/players/VitaAkimova.png"
+    },
+    {
+      "name": "Paola Egonu",
+      "position": "Opposite",
+      "country": "Italy",
+      "image": "images/players/PaolaEgonu.png"
+    },
+    {
+      "name": "Julia Nowicka",
+      "position": "Setter",
+      "country": "Poland",
+      "image": "images/players/JuliaNowicka.png"
     }
   ]
 }
