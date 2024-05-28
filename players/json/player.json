@@ -1,0 +1,64 @@
+{
+  "player": [
+    {
+      "name": "Gyselle Silva",
+      "position": "Opposite",
+      "country": "Cuba",
+      "image": "images/players/GyselleSilva.png"
+    },
+    {
+      "name": "Alyja Daphne Santiago",
+      "position": "Middle Blocker",
+      "country": "Philippines",
+      "image": "images/players/AlyjaDaphneSantiago.png"
+    },
+    {
+      "name": "Kaja Grobelna",
+      "position": "Opposite",
+      "country": "Belgium",
+      "image": "images/players/KajaGrobelna.png"
+    },
+    {
+      "name": "Sofya Kutnetsova",
+      "position": "Outside Hitter",
+      "country": "Russia",
+      "image": "images/players/SofyaKutnetsova.png"
+    },
+    {
+      "name": "Julia Kudiess",
+      "position": "Middle Blocker",
+      "country": "Brazil",
+      "image": "images/players/JuliaKudiess.png"
+    },
+    {
+      "name": "Sarina Nishida",
+      "position": "Outside Hitter",
+      "country": "Japan",
+      "image": "images/players/SarinaNishida.png"
+    },
+    {
+      "name": "Yeon-Koung Kim",
+      "position": "Outside Hitter",
+      "country": "South Korea",
+      "image": "images/players/Yeon-KoungKim.png"
+    },
+    {
+      "name": "Priscila Daroit",
+      "position": "Outside Hitter",
+      "country": "Brazil",
+      "image": "images/players/PriscilaDaroit.png"
+    },
+    {
+      "name": "Thaisa Menezes",
+      "position": "MIddle Blocker",
+      "country": "Brazil",
+      "image": "images/players/ThaisaMenezes.png"
+    },
+    {
+      "name": "Andrea Drews",
+      "position": "Opposite",
+      "country": "USA",
+      "image": "images/players/AndreaDrews.png"
+    }
+  ]
+}

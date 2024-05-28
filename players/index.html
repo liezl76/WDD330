@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Women's Volleyball Website | WDD330 | Home</title>
-  <link rel="stylesheet" href="..\css\styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div id="content">
     <header>
       <a id="logo_link" href="index.html">
-        <img class="logo" src="..\src\images\logo.png" alt="logo img">
+        <img class="logo" src="..\images\logo.png" alt="logo img">
       </a>
       <div class="nav-toggle" id="nav-toggle">
         <span></span>
@@ -20,16 +20,13 @@
         <span></span>
       </div>
       <nav id="nav-menu">
-        <a href="index.html">Home</a>
+        <a href="..\index.html">Home</a>
         <a href="players/index.html">Player Profiles</a>
-        <a href="team/index.html">Volleyball Team Hub</a>
+        <a href="..\team\index.html">Volleyball Team Hub</a>
         <a href="#">Contact Us</a>
       </nav>
     </header>
     <div id="hero">
-        <div id="hero-box">
-            <img id="hero-img" src="..\src\images\vballimg1.jpg" alt="women's volleyball">
-        </div>
         <section id="hero-msg">
             <h1 class="home-title">Discover the stories and achievements of top female volleyball players from around the world.</h1>
             <div class="button-box">
@@ -37,29 +34,28 @@
             </div>
         </section>
     </div>
-    <main class="home-grid">
-      <section id="player-profile">
-        <h2>Player Profiles</h2>
-        <div id="profile-container">
-            <!-- players profile will be dynamically inserted here -->
-        </div>
-      </section>
+    <!-- Main Content -->
+    <main>
+      <button id="grid">⏹️Grid</button>
+      <button id="list">📄List</button>
+      <div id="player-profiles"></div>
+
     </main>
     <footer>
-      <p>Women's Volleyball Website &#169; <span id="currentYear"></span> Liezl G. Lizardo | WDD330 |<img class="footer-img" src="..\src\images\philippines.jpg" alt="Philippines Flag"></p>
+      <p>Women's Volleyball Website &#169; <span id="currentYear"></span> Liezl G. Lizardo | WDD330 |<img class="footer-img" src="..\images\philippines.jpg" alt="Philippines Flag"></p>
       <div class="social">
           <a href="https://facebook.com" target="_blank">
-            <img src="..\src\images\fb.png" alt="fb icon">
+            <img src="..\images\fb.png" alt="fb icon">
           </a>
           <a href="https://twitter.com" target="_blank">
-            <img src="..\src\images\twitter.png" alt="twitter icon">
+            <img src="..\images\twitter.png" alt="twitter icon">
           </a>
           <a href="https://instagram.com" target="_blank">
-            <img src="..\src\images\instagram.png" alt="instagram icon">
+            <img src="..\images\instagram.png" alt="instagram icon">
           </a>
       </div>
     </footer>
-    <script src="js/getDate.js"></script>
+    <script src="..\js\getDate.js"></script>
     <script src="js/loadPlayers.js"></script>
   </div>
 </body>
