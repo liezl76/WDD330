@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's Volleyball Website | WDD330 | Home</title>
+  <title>Women's Volleyball Website | WDD330 | Contact Us</title>
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" href="favicon.ico">
-</head
+</head>
 <body>
   <div id="content">
     <header>
@@ -16,7 +16,6 @@
         <img class="logo" src="src/images/logo.png" alt="logo img">
       </a>
       <div class="nav-toggle" id="nav-toggle">
-        <span></span>
         <span></span>
         <span></span>
         <span></span>
@@ -29,24 +28,24 @@
       </nav>
     </header>
     <main>
-        <div id="formmessage"></div>
+        <div id="formmessage" class="formmessage"></div>
         <h1>Contact Us</h1>
         <form id="contactForm" method="get" onsubmit="return validateForm()">
             <p class="smaller">*️⃣ Indicates a required field</p>
 
-            <label for="username" class="top">Username</label>
+            <label for="username" class="top">Username *</label>
             <input type="text" id="username" name="username" required placeholder="Please enter your Username">
 
-            <label for="password" class="top">Your Password</label>
+            <label for="password" class="top">Your Password *</label>
             <input type="password" id="password" name="password" pattern="[a-zA-Z0-9]{8,}" required placeholder="At least eight alpha-numeric characters only.">
 
-            <label for="password2" class="top">Re-enter Your Password</label>
+            <label for="password2" class="top">Re-enter Your Password *</label>
             <input type="password" id="password2" name="password2" required>
 
-            <label for="email" class="top">Email Address</label>
+            <label for="email" class="top">Email Address *</label>
             <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" required placeholder="Please enter a valid email address">
 
-            <label for="pagerating">Page Rating</label>
+            <label for="pagerating" class="top">Page Rating</label>
             <input type="range" id="pagerating" name="pagerating" min="1" max="10" step="1" value="5">
 
             <button type="submit">Submit</button>
