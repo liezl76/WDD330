@@ -1,4 +1,5 @@
-const url = 'https://volleyball.sportdevs.com/teams';
+const teamsUrl = 'https://volleyball.sportdevs.com/teams';
+const countriesUrl = 'https://volleyball.sportdevs.com/countries';
 const options = {
     method: 'GET',
     headers: {
@@ -7,14 +8,28 @@ const options = {
     }
 };
 
+window.onload = async () => {
+    await fetchCountries();
+};
+
 async function searchTeams() {
     const searchInput = document.getElementById('search-input').value.trim();
-    const searchUrl = `${url}?country_id=eq.${searchInput}&lang=en&limit=50`;
+    const searchUrl = `${teamsUrl}?country_id=eq.${searchInput}&lang=en&limit=50`;
 
     try {
         const response = await fetch(searchUrl, options);
         const data = await response.json();
         displayTeams(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function fetchCountries() {
+    try {
+        const response = await fetch(countriesUrl, options);
+        const data = await response.json();
+        displayCountries(data);
     } catch (error) {
         console.error(error);
     }
@@ -55,4 +70,23 @@ function displayTeams(teams) {
 
         mainContent.appendChild(teamDiv);
     });
+}
+
+function displayCountries(countries) {
+    const countriesContent = document.getElementById('countries-content');
+    countriesContent.innerHTML = '';
+
+    if (countries.length === 0) {
+        countriesContent.innerHTML = '<p>No countries found.</p>';
+        return;
+    }
+
+    const countriesList = document.createElement('ul');
+    countries.forEach(country => {
+        const countryItem = document.createElement('li');
+        countryItem.textContent = `${country.name} (ID: ${country.id})`;
+        countriesList.appendChild(countryItem);
+    });
+
+    countriesContent.appendChild(countriesList);
 }
