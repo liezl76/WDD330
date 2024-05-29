@@ -1,4 +1,4 @@
-const url = 'https://volleyball-devs.p.rapidapi.com/teams';
+const url = 'https://volleyball.sportdevs.com/teams';
 const options = {
     method: 'GET',
     headers: {
@@ -8,18 +8,8 @@ const options = {
 };
 
 async function searchTeams() {
-    const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
-    let searchUrl = `${url}?lang=en&limit=50`;
-
-    if (searchInput) {
-        if (isNaN(searchInput)) {
-            // Assume it's a country name if the input is not a number
-            searchUrl += `&country_name=like.%${searchInput}%`;
-        } else {
-            // Assume it's a league ID if the input is a number
-            searchUrl += `&primary_league_id=eq.${searchInput}`;
-        }
-    }
+    const searchInput = document.getElementById('search-input').value.trim();
+    const searchUrl = `${url}?country_id=eq.${searchInput}&lang=en&limit=50`;
 
     try {
         const response = await fetch(searchUrl, options);
@@ -47,10 +37,17 @@ function displayTeams(teams) {
         teamName.textContent = team.name;
 
         const teamCountry = document.createElement('p');
-        teamCountry.textContent = `Country: ${team.country}`;
+        teamCountry.textContent = `Country ID: ${team.country_id}`;
 
         const teamDetails = document.createElement('p');
-        teamDetails.textContent = `League: ${team.primary_league_id}`;
+        teamDetails.textContent = `League ID: ${team.primary_league_id}`;
+
+        if (team.hash_image) {
+            const teamImage = document.createElement('img');
+            teamImage.src = `https://images.sportdevs.com/${team.hash_image}.png`;
+            teamImage.alt = `${team.name} logo`;
+            teamDiv.appendChild(teamImage);
+        }
 
         teamDiv.appendChild(teamName);
         teamDiv.appendChild(teamCountry);
