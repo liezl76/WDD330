@@ -1,66 +1,61 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.button');
-  const mainContent = document.getElementById('main-content');
-  const searchInput = document.getElementById('search-input');
-  const searchButton = document.getElementById('search-button');
+const url = 'https://volleyball-devs.p.rapidapi.com/teams';
+const options = {
+    method: 'GET',
+    headers: {
+        'x-rapidapi-key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+        'x-rapidapi-host': 'volleyball-devs.p.rapidapi.com'
+    }
+};
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const dataType = button.getAttribute('data-type');
-      if (dataType === 'season') {
-        // Handle season button click
-      } else if (dataType === 'countries') {
-        // Handle countries button click
-      } else if (dataType === 'teams') {
-        // Handle teams button click
-      } else if (dataType === 'search') {
-        search();
-      }
-    });
-  });
+async function searchTeams() {
+    const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
+    let searchUrl = `${url}?lang=en&limit=50`;
 
-  async function search() {
-    const query = searchInput.value.trim();
-    if (!query) {
-      alert('Please enter a search query.');
-      return;
+    if (searchInput) {
+        if (isNaN(searchInput)) {
+            // Assume it's a country name if the input is not a number
+            searchUrl += `&country_name=like.%${searchInput}%`;
+        } else {
+            // Assume it's a league ID if the input is a number
+            searchUrl += `&primary_league_id=eq.${searchInput}`;
+        }
     }
 
     try {
-      const response = await fetch(`https://api-volleyball.p.rapidapi.com/search?query=${query}`, {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-          'x-rapidapi-host': 'api-volleyball.p.rapidapi.com'
-        }
-      });
-
-      if (!response.ok) {
-        throw new Error(`Failed to fetch: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      displaySearchResults(data.response);
+        const response = await fetch(searchUrl, options);
+        const data = await response.json();
+        displayTeams(data);
     } catch (error) {
-      console.error('Error fetching search results:', error);
-      mainContent.innerHTML = `Failed to load search results. ${error.message}`;
+        console.error(error);
     }
-  }
+}
 
-  function displaySearchResults(results) {
-    // Display search results code goes here
-    if (results.length === 0) {
-      mainContent.innerHTML = '<p>No results found.</p>';
-      return;
-    }
-
-    const resultList = document.createElement('ul');
-    results.forEach(result => {
-      const listItem = document.createElement('li');
-      listItem.textContent = result;
-      resultList.appendChild(listItem);
-    });
+function displayTeams(teams) {
+    const mainContent = document.getElementById('main-content');
     mainContent.innerHTML = '';
-    mainContent.appendChild(resultList);
-  }
-});
+
+    if (teams.length === 0) {
+        mainContent.innerHTML = '<p>No teams found.</p>';
+        return;
+    }
+
+    teams.forEach(team => {
+        const teamDiv = document.createElement('div');
+        teamDiv.classList.add('team');
+
+        const teamName = document.createElement('h2');
+        teamName.textContent = team.name;
+
+        const teamCountry = document.createElement('p');
+        teamCountry.textContent = `Country: ${team.country}`;
+
+        const teamDetails = document.createElement('p');
+        teamDetails.textContent = `League: ${team.primary_league_id}`;
+
+        teamDiv.appendChild(teamName);
+        teamDiv.appendChild(teamCountry);
+        teamDiv.appendChild(teamDetails);
+
+        mainContent.appendChild(teamDiv);
+    });
+}

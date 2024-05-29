@@ -184,6 +184,21 @@ main {
   font-size: 1rem;
 }
 
+.team {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.team h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.team p {
+  margin: 5px 0;
+}
+
 /* Footer styles */
 footer {
   background-color: #00937A;
