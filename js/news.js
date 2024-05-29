@@ -1,39 +1,44 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const url = 'https://real-time-sports-news-api.p.rapidapi.com/live-articles';
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-      'X-RapidAPI-Host': 'real-time-sports-news-api.p.rapidapi.com'
-    }
-  };
+const url = 'https://volleyball-devs.p.rapidapi.com/agg-news-matches?lang=en&offset=0&match_id=eq.2876&limit=50';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+		'x-rapidapi-host': 'volleyball-devs.p.rapidapi.com'
+	}
+};
 
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const result = await response.json();
-    console.log(result); // Log the result to inspect the response structure
+async function fetchNewsData() {
+	try {
+		const response = await fetch(url, options);
+		const result = await response.json();
+		console.log(result);
+		updateNewsSection(result);
+	} catch (error) {
+		console.error(error);
+	}
+}
 
-    const newsContainer = document.getElementById('news-container');
-    if (result.articles && result.articles.length > 0) {
-      result.articles.forEach(article => {
-        const newsItem = document.createElement('div');
-        newsItem.className = 'news-item';
-        newsItem.innerHTML = `
-          <h3>${article.title}</h3>
-          <p>${article.description}</p>
-          <a href="${article.url}" target="_blank">Read more</a>
-        `;
-        newsContainer.appendChild(newsItem);
-      });
-    } else {
-      newsContainer.innerHTML = '<p>No news articles available at the moment.</p>';
-    }
-  } catch (error) {
-    console.error('Error fetching the news:', error);
-    const newsContainer = document.getElementById('news-container');
-    newsContainer.innerHTML = '<p>Failed to load news articles. Please try again later.</p>';
-  }
-});
+function updateNewsSection(data) {
+	const newsContainer = document.getElementById('news-container');
+	newsContainer.innerHTML = ''; // Clear any existing content
+
+	if (data && data.length > 0) {
+		data.forEach(item => {
+			const newsElement = document.createElement('div');
+			newsElement.className = 'news-item';
+			newsElement.innerHTML = `
+				<h3>${item.title}</h3>
+				<p>${item.description}</p>
+				<a href="${item.link}" target="_blank">Read more</a>
+			`;
+			newsContainer.appendChild(newsElement);
+		});
+	} else {
+		const noNewsElement = document.createElement('div');
+		noNewsElement.className = 'news-item';
+		noNewsElement.innerHTML = '<p>No news found.</p>';
+		newsContainer.appendChild(noNewsElement);
+	}
+}
+
+fetchNewsData();
