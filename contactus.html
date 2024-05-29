@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Women's Volleyball Website | WDD330 | Home</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" href="favicon.ico">
 </head
@@ -25,27 +25,32 @@
         <a href="index.html" class="active">Home</a>
         <a href="player.html">Player Profiles</a>
         <a href="team.html">Volleyball Team Hub</a>
-        <a href="contactus.html">Contact Us</a>
+        <a href="#">Contact Us</a>
       </nav>
     </header>
-    <div id="hero">
-        <div id="hero-box">
-            <img id="hero-img" src="src/images/vballimg2.jpg" alt="women's volleyball">
-        </div>
-        <section id="hero-msg">
-            <h1 class="home-title">Discover the exciting world of women's volleyball, where passion, skill, and teamwork collide on the court.</h1>
-            <div class="button-box">
-              <a class="book" href="join.html">Join Now</a>
-            </div>
-        </section>
-    </div>
-    <main class="home-grid">
-      <section id="news">
-        <h2>Latest News</h2>
-        <div id="news-container">
-            <!-- News items will be dynamically inserted here -->
-        </div>
-      </section>
+    <main>
+        <div id="formmessage"></div>
+        <h1>Contact Us</h1>
+        <form id="contactForm" method="get" onsubmit="return validateForm()">
+            <p class="smaller">*️⃣ Indicates a required field</p>
+
+            <label for="username" class="top">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Please enter your Username">
+
+            <label for="password" class="top">Your Password</label>
+            <input type="password" id="password" name="password" pattern="[a-zA-Z0-9]{8,}" required placeholder="At least eight alpha-numeric characters only.">
+
+            <label for="password2" class="top">Re-enter Your Password</label>
+            <input type="password" id="password2" name="password2" required>
+
+            <label for="email" class="top">Email Address</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" required placeholder="Please enter a valid email address">
+
+            <label for="pagerating">Page Rating</label>
+            <input type="range" id="pagerating" name="pagerating" min="1" max="10" step="1" value="5">
+
+            <button type="submit">Submit</button>
+        </form>
     </main>
     <footer>
       <p>Women's Volleyball Website &#169; <span id="currentYear"></span> Liezl G. Lizardo | WDD330 |<img class="footer-img" src="src/images/philippines.jpg" alt="Philippines Flag"></p>
@@ -62,7 +67,7 @@
       </div>
     </footer>
     <script src="js/getDate.js"></script>
-    <script src="js/news.js"></script>
+    <script src="js/formvalidation.js"></script>
   </div>
 </body>
 </html>
