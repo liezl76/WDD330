@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         playerDiv.className = view === 'grid' ? 'player-grid' : 'player-list';
 
         const playerImg = document.createElement('img');
-        playerImg.src = `../${player.image}`;
+        // playerImg.src = `../${player.image}`;
+        playerImg.src = `${player.image}`;
         playerImg.alt = `${player.name} image`;
 
         const playerInfo = document.createElement('div');
