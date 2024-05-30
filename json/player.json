@@ -4,121 +4,121 @@
       "name": "Gyselle Silva",
       "position": "Opposite",
       "country": "Cuba",
-      "image": "images/gysellesilva.png"
+      "image": "src/images/gysellesilva.png"
     },
     {
       "name": "Alyja Daphne Santiago",
       "position": "Middle Blocker",
       "country": "Philippines",
-      "image": "images/alyjasantiago.png"
+      "image": "src/images/alyjasantiago.png"
     },
     {
       "name": "Kaja Grobelna",
       "position": "Opposite",
       "country": "Belgium",
-      "image": "images/kajagrobelna.png"
+      "image": "src/images/kajagrobelna.png"
     },
     {
       "name": "Sofya Kutnetsova",
       "position": "Outside Hitter",
       "country": "Russia",
-      "image": "images/sofyakutnetsova.png"
+      "image": "src/images/sofyakutnetsova.png"
     },
     {
       "name": "Julia Kudiess",
       "position": "Middle Blocker",
       "country": "Brazil",
-      "image": "images/juliakudiess.png"
+      "image": "src/images/juliakudiess.png"
     },
     {
       "name": "Sarina Nishida",
       "position": "Outside Hitter",
       "country": "Japan",
-      "image": "images/sarinanishida.png"
+      "image": "src/images/sarinanishida.png"
     },
     {
       "name": "Yeon-Koung Kim",
       "position": "Outside Hitter",
       "country": "South Korea",
-      "image": "images/yeonkoungkim.png"
+      "image": "src/images/yeonkoungkim.png"
     },
     {
       "name": "Priscila Daroit",
       "position": "Outside Hitter",
       "country": "Brazil",
-      "image": "images/prisciladaroit.png"
+      "image": "src/images/prisciladaroit.png"
     },
     {
       "name": "Thaisa Menezes",
       "position": "Middle Blocker",
       "country": "Brazil",
-      "image": "images/thaisameneze.png"
+      "image": "src/images/thaisameneze.png"
     },
     {
       "name": "Andrea Drews",
       "position": "Opposite",
       "country": "USA",
-      "image": "images/andreadrews.png"
+      "image": "src/images/andreadrews.png"
     },
     {
       "name": "Melissa Vargas",
       "position": "Opposite",
       "country": "Turkey",
-      "image": "images/melissavargas.png"
+      "image": "src/images/melissavargas.png"
     },
     {
       "name": "Yingying Li",
       "position": "Outside Hitter",
       "country": "China",
-      "image": "images/yingyingli.png"
+      "image": "src/images/yingyingli.png"
     },
     {
       "name": "Monique Pavao",
       "position": "Opposite",
       "country": "Brazil",
-      "image": "images/moniquepayao.png"
+      "image": "src/images/moniquepayao.png"
     },
     {
       "name": "Natalia Araujo",
       "position": "Libero",
       "country": "Brazil",
-      "image": "images/nataliaaraujo.png"
+      "image": "src/images/nataliaaraujo.png"
     },
     {
       "name": "Leah Edmond",
       "position": "Outside Hitter",
       "country": "USA",
-      "image": "images/leahedmond.png"
+      "image": "src/images/leahedmond.png"
     },
     {
       "name": "Danielle Lins",
       "position": "Setter",
       "country": "Brazil",
-      "image": "images/daniellelins.png"
+      "image": "src/images/daniellelins.png"
     },
     {
       "name": "Mayany Souza",
       "position": "Middle Blocker",
       "country": "Brazil",
-      "image": "images/mayanysouza.jpg"
+      "image": "src/images/mayanysouza.jpg"
     },
     {
       "name": "Vita Akimova",
       "position": "Opposite",
       "country": "Russia",
-      "image": "images/vitaakimova.png"
+      "image": "src/images/vitaakimova.png"
     },
     {
       "name": "Paola Egonu",
       "position": "Opposite",
       "country": "Italy",
-      "image": "images/paolaegonu.png"
+      "image": "src/images/paolaegonu.png"
     },
     {
       "name": "Julia Nowicka",
       "position": "Setter",
       "country": "Poland",
-      "image": "images/julianowicka.png"
+      "image": "src/images/julianowicka.png"
     }
   ]
 }
