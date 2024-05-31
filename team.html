@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Women's Volleyball Website | WDD330 | Home</title>
-  <link rel="stylesheet" href="css/styles1.css">
+  <link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <div id="content">
@@ -21,38 +23,33 @@
       <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="player.html">Player Profiles</a>
-        <a href="team.html" class="active">Volleyball Team Hub</a>
+        <a href="team.html"  class="active">Volleyball Team Hub</a>
         <a href="contactus.html">Contact Us</a>
       </nav>
     </header>
     <div id="hero">
-        <section id="hero-msg">
-            <h1 class="home-title">Explore profiles of top volleyball teams from around the world. Discover player rosters and team statistics.</h1>
-        </section>
+      <section id="hero-msg">
+          <h1 class="home-title">Explore profiles of top volleyball teams from around the world. Discover player rosters and team statistics.</h1>                                                                                                                                                                                                                                                
+      </section>
     </div>
     <main>
-      <div class="search-box">
-        <input type="text" id="search-input" placeholder="Enter country ID">
-        <button id="search-button" onclick="searchTeams()">Search</button>
+      <div class="button-box">
+        <button class="button button" data-type="teams">Teams</button>
       </div>
       <div id="main-content">
-        <!-- Fetched teams will be displayed here -->
-      </div>
-      <div id="countries-content">
-        <!-- Fetched countries will be displayed here -->
+        <!-- Fetched data will be displayed here -->
       </div>
     </main>
     <footer>
-      <p>Women's Volleyball Website &#169; <span id="currentYear"></span> Liezl G. Lizardo | WDD330 |
-      <img class="footer-img" src="src/images/philippines.jpg" alt="Philippines Flag"></p>
+      <p>Women's Volleyball Website &#169; <span id="currentYear"></span> Liezl G. Lizardo | WDD330 |<img class="footer-img" src="src/images/philippines.jpg" alt="Philippines Flag"></p>
       <div class="social">
-          <a href="https://facebook.com" target="_blank">
+          <a href="https://facebook.com" target="blank">
             <img src="src/images/fb.png" alt="fb icon">
           </a>
-          <a href="https://twitter.com" target="_blank">
+          <a href="https://twitter.com" target="blank">
             <img src="src/images/twitter.png" alt="twitter icon">
           </a>
-          <a href="https://instagram.com" target="_blank">
+          <a href="https://instagram.com" target="blank">
             <img src="src/images/instagram.png" alt="instagram icon">
           </a>
       </div>

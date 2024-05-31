@@ -1,92 +1,45 @@
-const teamsUrl = 'https://volleyball.sportdevs.com/teams';
-const countriesUrl = 'https://volleyball.sportdevs.com/countries';
+const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=50';
 const options = {
     method: 'GET',
     headers: {
-        'x-rapidapi-key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-        'x-rapidapi-host': 'volleyball-devs.p.rapidapi.com'
+        'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+        'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
     }
 };
 
-window.onload = async () => {
-    await fetchCountries();
-};
-
-async function searchTeams() {
-    const searchInput = document.getElementById('search-input').value.trim();
-    const searchUrl = `${teamsUrl}?country_id=eq.${searchInput}&lang=en&limit=50`;
-
+async function fetchData() {
     try {
-        const response = await fetch(searchUrl, options);
+        const response = await fetch(url, options);
         const data = await response.json();
-        displayTeams(data);
+        displayData(data);
     } catch (error) {
         console.error(error);
     }
 }
 
-async function fetchCountries() {
-    try {
-        const response = await fetch(countriesUrl, options);
-        const data = await response.json();
-        displayCountries(data);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-function displayTeams(teams) {
+function displayData(data) {
     const mainContent = document.getElementById('main-content');
     mainContent.innerHTML = '';
 
-    if (teams.length === 0) {
-        mainContent.innerHTML = '<p>No teams found.</p>';
-        return;
-    }
-
-    teams.forEach(team => {
+    data.forEach(team => {
         const teamDiv = document.createElement('div');
-        teamDiv.classList.add('team');
+        teamDiv.className = 'team';
 
-        const teamName = document.createElement('h2');
-        teamName.textContent = team.name;
-
-        const teamCountry = document.createElement('p');
-        teamCountry.textContent = `Country ID: ${team.country_id}`;
-
-        const teamDetails = document.createElement('p');
-        teamDetails.textContent = `League ID: ${team.primary_league_id}`;
-
-        if (team.hash_image) {
-            const teamImage = document.createElement('img');
-            teamImage.src = `https://images.sportdevs.com/${team.hash_image}.png`;
-            teamImage.alt = `${team.name} logo`;
-            teamDiv.appendChild(teamImage);
-        }
-
-        teamDiv.appendChild(teamName);
-        teamDiv.appendChild(teamCountry);
-        teamDiv.appendChild(teamDetails);
+        teamDiv.innerHTML = `
+            <h2>${team.name}</h2>
+            <p><strong>Short Name:</strong> ${team.short_name}</p>
+            <p><strong>Full Name:</strong> ${team.full_name}</p>
+            <p><strong>Gender:</strong> ${team.gender}</p>
+            <p><strong>Country:</strong> ${team.country_name}</p>
+            <p><strong>League:</strong> ${team.primary_league_name}</p>
+            <p><strong>Tournament:</strong> ${team.tournament_name}</p>
+            <p><strong>Arena:</strong> ${team.arena_name}</p>
+            <img src="https://volleyball-devs.p.rapidapi.com/images/${team.hash_image}" alt="${team.name} logo" />
+        `;
 
         mainContent.appendChild(teamDiv);
     });
 }
 
-function displayCountries(countries) {
-    const countriesContent = document.getElementById('countries-content');
-    countriesContent.innerHTML = '';
-
-    if (countries.length === 0) {
-        countriesContent.innerHTML = '<p>No countries found.</p>';
-        return;
-    }
-
-    const countriesList = document.createElement('ul');
-    countries.forEach(country => {
-        const countryItem = document.createElement('li');
-        countryItem.textContent = `${country.name} (ID: ${country.id})`;
-        countriesList.appendChild(countryItem);
-    });
-
-    countriesContent.appendChild(countriesList);
-}
+// Call the function to fetch data
+fetchData();
