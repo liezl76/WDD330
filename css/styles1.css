@@ -129,74 +129,80 @@ nav.active a:hover {
   background-color: #d45b10;
 }
 
-
 /* Main section styles */
 main {
   padding: 20px;
 }
 
-.search-box {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-#search-input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
-  width: 200px;
-}
-
-#search-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #ff6f61;
-  color: white;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
-
-#search-button:hover {
-  background-color: #ff5a4d;
-}
-
-#main-content {
+#team-profiles {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  gap: 16px;
+  padding: 16px;
 }
 
-.team-statistics {
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Grid view */
+.grid .team {
+  flex: 1 1 calc(25% - 32px); /* 4 columns */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
 }
 
-.team-statistics p {
+/* List view */
+.list .team {
+  display: block;
+  width: calc(100% - 20px);
   margin: 10px 0;
-  font-size: 1rem;
 }
 
 .team {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  margin-bottom: 16px;
+  font-size: medium;
+}
+
+.team img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.team-grid img,
+.team-list img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+.team-info {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.team-list .team-info {
+  margin-left: 12px;
+  text-align: left;
 }
 
 .team h2 {
-  margin: 0;
-  font-size: 1.5em;
+  margin-bottom: 5px;
 }
 
 .team p {
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
 /* Footer styles */

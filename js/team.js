@@ -1,4 +1,4 @@
-const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=50';
+const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=100';
 const options = {
     method: 'GET',
     headers: {
@@ -11,17 +11,18 @@ async function fetchData() {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
-        displayData(data);
+        const womensTeams = data.filter(team => team.gender === 'F'); // Filter for women's teams
+        displayData(womensTeams);
     } catch (error) {
         console.error(error);
     }
 }
 
-function displayData(data) {
-    const mainContent = document.getElementById('main-content');
-    mainContent.innerHTML = '';
+function displayData(teams) {
+    const teamProfiles = document.getElementById('team-profiles');
+    teamProfiles.innerHTML = '';
 
-    data.forEach(team => {
+    teams.forEach(team => {
         const teamDiv = document.createElement('div');
         teamDiv.className = 'team';
 
@@ -37,9 +38,25 @@ function displayData(data) {
             <img src="https://volleyball-devs.p.rapidapi.com/images/${team.hash_image}" alt="${team.name} logo" />
         `;
 
-        mainContent.appendChild(teamDiv);
+        teamProfiles.appendChild(teamDiv);
     });
+}
+
+function setGridView() {
+    const teamProfiles = document.getElementById('team-profiles');
+    teamProfiles.classList.add('grid');
+    teamProfiles.classList.remove('list');
+}
+
+function setListView() {
+    const teamProfiles = document.getElementById('team-profiles');
+    teamProfiles.classList.add('list');
+    teamProfiles.classList.remove('grid');
 }
 
 // Call the function to fetch data
 fetchData();
+
+// Add event listeners for Grid and List buttons
+document.getElementById('grid').addEventListener('click', setGridView);
+document.getElementById('list').addEventListener('click', setListView);
