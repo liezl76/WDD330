@@ -1,4 +1,4 @@
-const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=100';
+const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en';
 const options = {
     method: 'GET',
     headers: {
