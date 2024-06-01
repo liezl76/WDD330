@@ -66,6 +66,26 @@ nav a.active {
   color: white;
 }
 
+/* Styles for active navigation menu */
+nav.active {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f5b88f;
+}
+
+nav.active a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background-color: #f5b88f;
+  color: black;
+}
+
+nav.active a:hover {
+  background-color: #e76915;
+}
+
 /* Hero section styles */
 #hero {
   display: flex;
