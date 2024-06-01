@@ -134,75 +134,29 @@ main {
   padding: 20px;
 }
 
-#team-profiles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
+.search-container {
+  margin-bottom: 20px;
 }
 
-/* Grid view */
-.grid .team {
-  flex: 1 1 calc(25% - 32px); /* 4 columns */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-}
-
-/* List view */
-.list .team {
-  display: block;
-  width: calc(100% - 20px);
-  margin: 10px 0;
-}
-
-.team {
+table {
   width: 100%;
-  display: flex;
-  align-items: center;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
   border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 16px;
-  margin-bottom: 16px;
-  font-size: medium;
 }
 
-.team img {
-  max-width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-.team-grid img,
-.team-list img {
-  width: 100%;
-  height: auto;
-  max-width: 150px;
-  border-radius: 50%;
-}
-
-.team-info {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.team-list .team-info {
-  margin-left: 12px;
+th, td {
+  padding: 10px;
   text-align: left;
 }
 
-.team h2 {
-  margin-bottom: 5px;
-}
-
-.team p {
-  margin: 2px 0;
+#loading {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.5em;
 }
 
 /* Footer styles */

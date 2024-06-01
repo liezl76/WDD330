@@ -151,6 +151,8 @@
             resultDiv.innerHTML = '';
             setLoading(true);
 
+            const getImageUrl = (hash) => `https://volleyball-devs.p.rapidapi.com/images/${hash}`;
+
             try {
                 if (category === 'leagues') {
                     const leagues = await fetchLeagues();
@@ -174,7 +176,7 @@
                             ${filteredLeagues.map(league => `
                                 <tr>
                                     <td>${league.id}</td>
-                                    <td><img src="https://volleyball-devs.p.rapidapi.com/images/${league.hash_image}.png" alt="${league.name}" width="50" /></td>
+                                    <td><img src="${getImageUrl(league.hash_image)}" alt="${league.name}" width="50" /></td>
                                     <td>${league.name}</td>
                                     <td>${new Date(league.start_league).toLocaleDateString()}</td>
                                     <td>${new Date(league.end_league).toLocaleDateString()}</td>
@@ -206,7 +208,7 @@
                             ${filteredTeams.map(team => `
                                 <tr>
                                     <td>${team.id}</td>
-                                    <td><img src="https://volleyball-devs.p.rapidapi.com/images/${team.hash_image}.png" alt="${team.name}" width="50" /></td>
+                                    <td><img src="${getImageUrl(team.hash_image)}" alt="${team.name}" width="50" /></td>
                                     <td>${team.name}</td>
                                     <td>${team.country_name}</td>
                                     <td>${team.tournament_name}</td>
@@ -235,7 +237,7 @@
                             ${filteredCountries.map(country => `
                                 <tr>
                                     <td>${country.id}</td>
-                                    <td><img src="https://volleyball-devs.p.rapidapi.com/images/${country.hash_image}.png" alt="${country.name}" width="50" /></td>
+                                    <td><img src="${getImageUrl(country.hash_image)}" alt="${country.name}" width="50" /></td>
                                     <td>${country.name} (${country.alpha})</td>
                                 </tr>
                             `).join('')}
@@ -267,7 +269,7 @@
                                     <td>${season.name}</td>
                                     <td>${season.year}</td>
                                     <td>${season.league_name}</td>
-                                    <td><img src="https://volleyball-devs.p.rapidapi.com/images/${season.league_hash_image}.png" alt="${season.league_name}" width="50" /></td>
+                                    <td><img src="${getImageUrl(season.league_hash_image)}" alt="${season.league_name}" width="50" /></td>
                                     <td>${new Date(season.start_time).toLocaleDateString()}</td>
                                     <td>${new Date(season.end_time).toLocaleDateString()}</td>
                                 </tr>
