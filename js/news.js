@@ -108,3 +108,42 @@ document.addEventListener('DOMContentLoaded', () => {
 	fetchTeamNewsData();
 	fetchLeagueNewsData();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+	fetchNewsData();
+	fetchTeamNewsData();
+	fetchLeagueNewsData();
+  
+	// Search function
+	document.querySelector('button').addEventListener('click', search);
+  });
+  
+  function search() {
+	const query = document.getElementById('searchBox').value;
+	const category = document.getElementById('categoryDropdown').value;
+	// Implement search logic here
+  }
+
+  // Save search preferences
+function savePreferences() {
+	const searchBox = document.getElementById('searchBox').value;
+	const category = document.getElementById('categoryDropdown').value;
+	localStorage.setItem('searchBox', searchBox);
+	localStorage.setItem('category', category);
+  }
+  
+  // Load search preferences
+  function loadPreferences() {
+	const searchBox = localStorage.getItem('searchBox') || '';
+	const category = localStorage.getItem('category') || '';
+	document.getElementById('searchBox').value = searchBox;
+	document.getElementById('categoryDropdown').value = category;
+  }
+  
+  // Call loadPreferences on page load
+  document.addEventListener('DOMContentLoaded', () => {
+	loadPreferences();
+	fetchNewsData();
+	fetchTeamNewsData();
+	fetchLeagueNewsData();
+  });

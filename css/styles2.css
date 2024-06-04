@@ -162,7 +162,7 @@ nav.active a:hover {
   margin: 0;
 }
 
-/* player-proifiles */
+/* player-profiles */
 #player-profiles {
   display: flex;
   flex-wrap: wrap;
@@ -170,30 +170,32 @@ nav.active a:hover {
   padding: 16px;
 }
 
-.player-grid {
-  flex: 1 1 calc(25% - 32px); /* 4 columns */
+.player-grid, .player-list {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 16px;
+}
+
+.player-grid {
+  flex: 1 1 calc(25% - 32px); /* 4 columns */
+  flex-direction: column;
 }
 
 .player-list {
   width: 100%;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 16px;
   margin-bottom: 16px;
 }
 
-.player-grid img,
-.player-list img {
+.player-grid:hover, .player-list:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.player-grid img, .player-list img {
   width: 100%;
   height: auto;
   max-width: 150px;
@@ -208,12 +210,6 @@ nav.active a:hover {
 .player-list .player-info {
   margin-left: 16px;
   text-align: left;
-}
-
-.button-box {
-  display: flex;
-  gap: 8px;
-  margin: 16px 0;
 }
 
 /* Footer styles */
@@ -304,9 +300,5 @@ footer p {
   .book {
     font-size: 0.9em;
     padding: 10px 20px;
-  }
-
-  .social img {
-    width: 25px;
   }
 }
