@@ -101,32 +101,8 @@ async function updateNewsSection(data, containerId) {
     }
 }
 
-function search() {
-    const query = document.getElementById('searchBox').value;
-    const category = document.getElementById('categoryDropdown').value;
-    // Implement search logic here
-}
-
-function savePreferences() {
-    const searchBox = document.getElementById('searchBox').value;
-    const category = document.getElementById('categoryDropdown').value;
-    localStorage.setItem('searchBox', searchBox);
-    localStorage.setItem('category', category);
-}
-
-function loadPreferences() {
-    const searchBox = localStorage.getItem('searchBox') || '';
-    const category = localStorage.getItem('category') || '';
-    document.getElementById('searchBox').value = searchBox;
-    document.getElementById('categoryDropdown').value = category;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    loadPreferences();
     fetchNewsData();
     fetchTeamNewsData();
     fetchLeagueNewsData();
-
-    // Search function
-    document.querySelector('button').addEventListener('click', search);
 });
