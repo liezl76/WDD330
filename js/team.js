@@ -1,105 +1,26 @@
-function setLoading(isLoading) {
-    document.getElementById('loading').style.display = isLoading ? 'block' : 'none';
-}
+document.addEventListener("DOMContentLoaded", async () => {
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-async function fetchCountries() {
-    const url = 'https://volleyball-devs.p.rapidapi.com/countries?limit=50&lang=en&offset=0';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result.data || result;
-    } catch (error) {
-        console.error('Error fetching countries:', error);
-        throw new Error('Failed to fetch countries. Please try again later.');
+    // Restore last search from local storage
+    const lastSearch = localStorage.getItem('lastSearch');
+    const lastCategory = localStorage.getItem('lastCategory');
+    if (lastSearch && lastCategory) {
+        document.getElementById("searchBox").value = lastSearch;
+        document.getElementById("categoryDropdown").value = lastCategory;
+        await search(lastSearch, lastCategory);
     }
-}
+});
 
-async function fetchLeagues() {
-    const url = 'https://volleyball-devs.p.rapidapi.com/leagues?limit=50&lang=en&offset=0';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result.data || result;
-    } catch (error) {
-        console.error('Error fetching leagues:', error);
-        throw new Error('Failed to fetch leagues. Please try again later.');
-    }
-}
-
-async function fetchTeams() {
-    const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=50&tournament_id=eq.1061&offset=0';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result.data || result;
-    } catch (error) {
-        console.error('Error fetching teams:', error);
-        throw new Error('Failed to fetch teams. Please try again later.');
-    }
-}
-
-async function fetchSeasons() {
-    const url = 'https://volleyball-devs.p.rapidapi.com/seasons?lang=en&offset=0&limit=50';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
-            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result.data || result;
-    } catch (error) {
-        console.error('Error fetching seasons:', error);
-        throw new Error('Failed to fetch seasons. Please try again later.');
-    }
-}
-
-async function search() {
-    const category = document.getElementById('categoryDropdown').value;
-    const searchQuery = document.getElementById('searchBox').value.toLowerCase();
+async function search(savedSearchQuery, savedCategory) {
+    const category = savedCategory || document.getElementById('categoryDropdown').value;
+    const searchQuery = savedSearchQuery || document.getElementById('searchBox').value.toLowerCase();
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
     setLoading(true);
+
+    // Save search criteria to local storage
+    localStorage.setItem('lastSearch', searchQuery);
+    localStorage.setItem('lastCategory', category);
 
     const getImageUrl = (hash) => `https://volleyball-devs.p.rapidapi.com/images/${hash}`;
 
@@ -234,3 +155,104 @@ async function search() {
         setLoading(false);
     }
 }
+
+function setLoading(isLoading) {
+    document.getElementById('loading').style.display = isLoading ? 'block' : 'none';
+}
+
+async function fetchCountries() {
+    const url = 'https://volleyball-devs.p.rapidapi.com/countries?limit=50&lang=en&offset=0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result.data || result;
+    } catch (error) {
+        console.error('Error fetching countries:', error);
+        throw new Error('Failed to fetch countries. Please try again later.');
+    }
+}
+
+async function fetchLeagues() {
+    const url = 'https://volleyball-devs.p.rapidapi.com/leagues?limit=50&lang=en&offset=0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result.data || result;
+    } catch (error) {
+        console.error('Error fetching leagues:', error);
+        throw new Error('Failed to fetch leagues. Please try again later.');
+    }
+}
+
+async function fetchTeams() {
+    const url = 'https://volleyball-devs.p.rapidapi.com/teams?lang=en&limit=50&tournament_id=eq.1061&offset=0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result.data || result;
+    } catch (error) {
+        console.error('Error fetching teams:', error);
+        throw new Error('Failed to fetch teams. Please try again later.');
+    }
+}
+
+async function fetchSeasons() {
+    const url = 'https://volleyball-devs.p.rapidapi.com/seasons?lang=en&offset=0&limit=50';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '5d938aa76dmsha69182664755b89p167d0bjsn66e606d1b47e',
+            'X-RapidAPI-Host': 'volleyball-devs.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result.data || result;
+    } catch (error) {
+        console.error('Error fetching seasons:', error);
+        throw new Error('Failed to fetch seasons. Please try again later.');
+    }
+}
+
+document.getElementById("searchBtn").addEventListener('click', () => search());
+document.getElementById("searchBox").addEventListener('keypress', (event) => {
+    if (event.key === "Enter") search();
+});
